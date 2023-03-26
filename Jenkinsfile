@@ -2,7 +2,7 @@ node {
    def mvnHome
    stage('Prepare') {
       git 'https://github.com/cicdTrainer/spring-boot-demo.git'
-      mvnHome = tool 'Maven 3.6.3'
+      mvnHome = tool 'maven'
    }
    stage('Compile') {
       if (isUnix()) {
