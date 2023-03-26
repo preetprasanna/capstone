@@ -43,7 +43,7 @@ node {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean deploy/)
       }
    }
-      stage('Push the Artifacts to Nexus/Jfrog') {
+   stage('Push the Artifacts to Nexus/Jfrog') {
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean deploy"
       } else {
