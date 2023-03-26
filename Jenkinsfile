@@ -13,7 +13,7 @@ node {
    }
    stage('Code Review') {
    if (isUnix()) {
-   sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+   this.sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
    } else {
    bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
    }
