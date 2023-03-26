@@ -6,14 +6,14 @@ node {
    }
    stage('Compile') {
       if (isUnix()) {
-         this.sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean compile"
+         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean compile"
       } else {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean compile/)
       }
    }
    stage('Code Review') {
    if (isUnix()) {
-   this.sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
    } else {
    bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
    }
